@@ -9,19 +9,25 @@
   <script src="assets/echarts.min.js"></script>
 </head>
 <body>
-<header class="topbar">
-  <a class="brand" href="#top">
-    <span class="brand-mark">BD</span>
-    <span>电商订单数据分析系统</span>
-  </a>
-  <nav>
-    <a href="#overview">概览</a>
-    <a href="#charts">分析图表</a>
-    <a href="#figures">论文图</a>
-    <a href="#architecture">架构与流程</a>
-    <a href="#quality">数据质量</a>
-    <a href="#tech">技术栈</a>
-  </nav>
+<header class="topbar" id="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="#top">
+      <span class="brand-mark">BD</span>
+      <span>电商订单数据分析系统</span>
+    </a>
+    <nav>
+      <a href="#overview">概览</a>
+      <a href="#charts">分析图表</a>
+      <a href="#figures">论文图</a>
+      <a href="#architecture">架构与流程</a>
+      <a href="#quality">数据质量</a>
+      <a href="#tech">技术栈</a>
+    </nav>
+    <div class="topbar-actions">
+      <a class="pill primary" href="#charts">查看分析结果</a>
+      <a class="pill ghost" href="https://github.com/frank-tan-cod/ecommerce-order-dashboard" target="_blank" rel="noopener">GitHub 仓库</a>
+    </div>
+  </div>
 </header>
 
 <main id="top">
@@ -40,6 +46,10 @@
       <p class="period">统计区间：2026-11-17 至 2026-11-23 · 数据为模拟订单</p>
     </div>
     <div class="hero-panel">
+      <div class="panel-top">
+        <span class="panel-dots"><i></i><i></i><i></i></span>
+        <span>DATA SNAPSHOT</span>
+      </div>
       <div class="panel-row"><span>有效订单</span><strong id="heroOrders">–</strong></div>
       <div class="panel-row"><span>原始消息</span><strong id="heroRaw">–</strong></div>
       <div class="panel-row"><span>HBase 唯一 RowKey</span><strong id="heroHbase">–</strong></div>
@@ -58,6 +68,7 @@
 
   <section class="section" id="charts">
     <div class="section-head">
+      <span class="kicker">Analysis · 01</span>
       <h2>分析结果</h2>
       <p>全部来自 Hive 对清洗后 5000 条有效订单的实际查询结果</p>
     </div>
@@ -67,13 +78,10 @@
       <article class="card wide"><h3>每日订单与 GMV 趋势</h3><div class="chart tall" id="trend"></div></article>
       <article class="card"><h3>2026-11-20 小时分布</h3><div class="chart" id="hourly"></div></article>
       <article class="card"><h3>高价值用户 Top 10</h3><div class="chart" id="users"></div></article>
-      <article class="card"><h3>订单状态分布</h3><div class="chart small" id="status"></div></article>
       <article class="card">
-        <h3>热销商品（阈值 30,000 元）</h3>
-        <table class="table compact" id="hotTable">
-          <thead><tr><th>商品</th><th>已支付订单</th><th>销量</th><th>销售额（元）</th></tr></thead>
-          <tbody></tbody>
-        </table>
+        <h3>订单状态分布</h3>
+        <div class="chart small" id="status"></div>
+        <p class="card-note" id="statusNote"></p>
       </article>
       <article class="card">
         <h3>异常数据类型</h3>
@@ -81,12 +89,22 @@
           <thead><tr><th>类型</th><th>数量</th></tr></thead>
           <tbody></tbody>
         </table>
+        <p class="card-note">异常记录只保留在 HDFS/HBase 原始层，不参与业务指标。</p>
+      </article>
+      <article class="card wide">
+        <h3>热销商品（阈值 30,000 元）</h3>
+        <table class="table compact" id="hotTable">
+          <thead><tr><th>商品</th><th>已支付订单</th><th>销量</th><th>销售额（元）</th></tr></thead>
+          <tbody></tbody>
+        </table>
+        <p class="card-note">阈值取平均已支付销售额（45,753.54 元）的约 2/3，筛出前 40%（20/50）商品。</p>
       </article>
     </div>
   </section>
 
   <section class="section" id="figures">
     <div class="section-head">
+      <span class="kicker">Paper Figures · 02</span>
       <h2>学术风格静态图</h2>
       <p>matplotlib · 宋体 / Times New Roman · 300 dpi · PNG 与 PDF 双格式</p>
     </div>
@@ -95,6 +113,7 @@
 
   <section class="section" id="architecture">
     <div class="section-head">
+      <span class="kicker">Architecture · 03</span>
       <h2>架构与数据流程</h2>
       <p>单机伪分布式部署：Hadoop 3.3.2 / Hive 3.1.3 / HBase 2.4.18 / Kafka 2.8.2 / ZooKeeper 3.5.9</p>
     </div>
@@ -112,6 +131,7 @@
 
   <section class="section" id="quality">
     <div class="section-head">
+      <span class="kicker">Data Quality · 04</span>
       <h2>数据质量与一致性</h2>
       <p>生成有效订单 5000 条 + 异常 100 条 + 重复 20 条</p>
     </div>
@@ -141,6 +161,7 @@
 
   <section class="section" id="tech">
     <div class="section-head">
+      <span class="kicker">Stack · 05</span>
       <h2>技术栈</h2>
       <p>从消息队列到数据仓库、分布式数据库与可视化</p>
     </div>
@@ -153,18 +174,53 @@
   </section>
 </main>
 
-<footer>
-  <p>基于 Hadoop 生态的电商订单数据分析系统 · 武汉理工大学信息工程学院</p>
-  <p class="muted">数据来源：Kafka → HDFS/HBase → Hive 实际查询结果 · 图表由 matplotlib 与 ECharts 生成</p>
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand"><span class="brand-mark">BD</span><span>电商订单数据分析系统</span></div>
+      <p class="footer-brand-copy">
+        基于 Hadoop 生态的全链路订单分析：Kafka 双路采集、HDFS/HBase 存储、Hive 离线分析与
+        Hive-HBase 映射查询，最终以学术图表和交互看板呈现。
+      </p>
+    </div>
+    <div class="footer-col">
+      <strong>页面</strong>
+      <a href="#charts">分析图表</a>
+      <a href="#figures">论文图</a>
+      <a href="#architecture">架构与流程</a>
+      <a href="#quality">数据质量</a>
+    </div>
+    <div class="footer-col">
+      <strong>项目</strong>
+      <a href="https://github.com/frank-tan-cod/ecommerce-order-dashboard" target="_blank" rel="noopener">GitHub 仓库</a>
+      <a href="https://frank-tan-cod.github.io/ecommerce-order-dashboard/" target="_blank" rel="noopener">公网看板</a>
+      <a href="assets/figures/fig1_category_order_pie.pdf" target="_blank">图表 PDF</a>
+    </div>
+    <div class="footer-col">
+      <strong>数据</strong>
+      <span>统计区间：2026-11-17 至 11-23</span>
+      <span>模拟订单 · 5000 条有效</span>
+      <span>Kafka → HDFS/HBase → Hive</span>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>基于 Hadoop 生态的电商订单数据分析系统 · 武汉理工大学信息工程学院</span>
+    <span>数据为模拟订单，图表来自 Hive 实际查询结果</span>
+  </div>
 </footer>
 
 <script>
-const CAT_COLORS = {"数码":"#0072B2","服饰":"#E69F00","食品":"#009E73","家居":"#CC79A7","美妆":"#56B4E9"};
-const FONT = "SimSun, 'Times New Roman', serif";
-const AXIS = {axisLine:{lineStyle:{color:'#9aa5b1'}},axisLabel:{color:'#52606d',fontFamily:FONT}};
+const CAT_COLORS = {"数码":"#315fa8","服饰":"#bd7c28","食品":"#1f7b72","家居":"#746b8c","美妆":"#c75f53"};
+const FONT = "Microsoft YaHei, Noto Sans SC, Inter, sans-serif";
+const AXIS = {axisLine:{lineStyle:{color:'#9eb8cf'}},axisLabel:{color:'#536d82',fontFamily:FONT}};
 const TEXT = {fontFamily:FONT};
 const fmt = n => Number(n||0).toLocaleString('zh-CN');
 const money = n => (Number(n||0)/10000).toFixed(1) + ' 万';
+
+const topbar = document.getElementById('topbar');
+const onScroll = () => topbar.classList.toggle('scrolled', window.scrollY > 8);
+onScroll();
+window.addEventListener('scroll', onScroll, {passive:true});
 
 function chart(id){
   const c = echarts.init(document.getElementById(id));
@@ -198,7 +254,7 @@ function render(d){
     legend:{bottom:0,textStyle:TEXT,itemWidth:12,itemHeight:8},
     series:[{type:'pie',radius:['38%','66%'],center:['50%','43%'],
       itemStyle:{borderColor:'#fff',borderWidth:2},
-      label:{formatter:'{b}\n{d}%',fontFamily:FONT,fontSize:11,color:'#333'},
+      label:{formatter:'{b}\n{d}%',fontFamily:FONT,fontSize:11,color:'#132d43'},
       data:cats.map(r=>({name:r.category,value:r.order_cnt,itemStyle:{color:CAT_COLORS[r.category]||'#999'}}))}]
   });
 
@@ -206,10 +262,10 @@ function render(d){
     tooltip:{trigger:'axis',axisPointer:{type:'shadow'},formatter:p=>`${p[0].name}<br/>已支付 GMV：${(p[0].value).toFixed(1)} 万元`,textStyle:TEXT},
     grid:{left:58,right:26,top:30,bottom:38},
     xAxis:{type:'category',data:cats.map(r=>r.category),...AXIS,axisTick:{show:false}},
-    yAxis:{type:'value',name:'万元',...AXIS,splitLine:{lineStyle:{color:'#E5E7EB',type:'dashed'}}},
+    yAxis:{type:'value',name:'万元',...AXIS,splitLine:{lineStyle:{color:'#dce9f3',type:'dashed'}}},
     series:[{type:'bar',barWidth:'46%',
       data:cats.map(r=>({value:(r.paid_gmv||0)/10000,itemStyle:{color:CAT_COLORS[r.category]||'#999',borderRadius:[3,3,0,0]}})),
-      label:{show:true,position:'top',formatter:p=>p.value.toFixed(1),fontFamily:FONT,fontSize:10,color:'#333'}}]
+      label:{show:true,position:'top',formatter:p=>p.value.toFixed(1),fontFamily:FONT,fontSize:10,color:'#132d43'}}]
   });
 
   const daily = d.daily || [];
@@ -219,13 +275,13 @@ function render(d){
     grid:{left:60,right:66,top:44,bottom:42},
     xAxis:{type:'category',data:daily.map(r=>r.dt.slice(5)),...AXIS,axisTick:{show:false}},
     yAxis:[
-      {type:'value',name:'订单数（笔）',...AXIS,splitLine:{lineStyle:{color:'#E5E7EB',type:'dashed'}}},
+      {type:'value',name:'订单数（笔）',...AXIS,splitLine:{lineStyle:{color:'#dce9f3',type:'dashed'}}},
       {type:'value',name:'金额（万元）',...AXIS,splitLine:{show:false}}
     ],
     series:[
-      {name:'订单数',type:'bar',barWidth:'42%',data:daily.map(r=>r.order_cnt),itemStyle:{color:'#4C72B0',borderRadius:[3,3,0,0]}},
-      {name:'GMV',type:'line',yAxisIndex:1,smooth:true,symbolSize:6,lineStyle:{width:2,color:'#D55E00'},itemStyle:{color:'#D55E00'},data:daily.map(r=>(r.gmv/10000).toFixed(2))},
-      {name:'已支付 GMV',type:'line',yAxisIndex:1,smooth:true,symbol:'rect',symbolSize:5,lineStyle:{width:1.6,color:'#009E73'},itemStyle:{color:'#009E73'},data:daily.map(r=>(r.paid_gmv/10000).toFixed(2))}
+      {name:'订单数',type:'bar',barWidth:'42%',data:daily.map(r=>r.order_cnt),itemStyle:{color:'#315fa8',borderRadius:[3,3,0,0]}},
+      {name:'GMV',type:'line',yAxisIndex:1,smooth:true,symbolSize:6,lineStyle:{width:2,color:'#bd7c28'},itemStyle:{color:'#bd7c28'},data:daily.map(r=>(r.gmv/10000).toFixed(2))},
+      {name:'已支付 GMV',type:'line',yAxisIndex:1,smooth:true,symbol:'rect',symbolSize:5,lineStyle:{width:1.6,color:'#1f7b72'},itemStyle:{color:'#1f7b72'},data:daily.map(r=>(r.paid_gmv/10000).toFixed(2))}
     ]
   });
 
@@ -236,12 +292,12 @@ function render(d){
     grid:{left:54,right:60,top:40,bottom:42},
     xAxis:{type:'category',data:hourly.map(r=>r.hr),...AXIS,name:'时',nameTextStyle:TEXT},
     yAxis:[
-      {type:'value',name:'笔',...AXIS,splitLine:{lineStyle:{color:'#E5E7EB',type:'dashed'}}},
+      {type:'value',name:'笔',...AXIS,splitLine:{lineStyle:{color:'#dce9f3',type:'dashed'}}},
       {type:'value',name:'万元',...AXIS,splitLine:{show:false}}
     ],
     series:[
-      {name:'订单数',type:'bar',barWidth:'58%',data:hourly.map(r=>r.order_cnt),itemStyle:{color:'#4C72B0'}},
-      {name:'已支付 GMV',type:'line',yAxisIndex:1,smooth:true,symbolSize:5,lineStyle:{width:1.8,color:'#D55E00'},itemStyle:{color:'#D55E00'},data:hourly.map(r=>(r.paid_gmv/10000).toFixed(2))}
+      {name:'订单数',type:'bar',barWidth:'58%',data:hourly.map(r=>r.order_cnt),itemStyle:{color:'#315fa8'}},
+      {name:'已支付 GMV',type:'line',yAxisIndex:1,smooth:true,symbolSize:5,lineStyle:{width:1.8,color:'#bd7c28'},itemStyle:{color:'#bd7c28'},data:hourly.map(r=>(r.paid_gmv/10000).toFixed(2))}
     ]
   });
 
@@ -249,9 +305,9 @@ function render(d){
   chart('users').setOption({
     tooltip:{trigger:'axis',axisPointer:{type:'shadow'},formatter:p=>`${p[0].name}<br/>已支付：${Number(p[0].value).toLocaleString()} 元`,textStyle:TEXT},
     grid:{left:62,right:30,top:20,bottom:36},
-    xAxis:{type:'value',name:'元',...AXIS,splitLine:{lineStyle:{color:'#E5E7EB',type:'dashed'}}},
+    xAxis:{type:'value',name:'元',...AXIS,splitLine:{lineStyle:{color:'#dce9f3',type:'dashed'}}},
     yAxis:{type:'category',data:users.map(r=>r.user_id).reverse(),...AXIS,axisTick:{show:false}},
-    series:[{type:'bar',barWidth:'58%',data:users.map(r=>r.paid_amount).reverse(),itemStyle:{color:'#0072B2',borderRadius:[0,3,3,0]}}]
+    series:[{type:'bar',barWidth:'58%',data:users.map(r=>r.paid_amount).reverse(),itemStyle:{color:'#315fa8',borderRadius:[0,3,3,0]}}]
   });
 
   const status = d.status || [];
@@ -259,15 +315,21 @@ function render(d){
     tooltip:{trigger:'axis',textStyle:TEXT},
     grid:{left:54,right:26,top:22,bottom:38},
     xAxis:{type:'category',data:status.map(r=>r.status),...AXIS,axisTick:{show:false}},
-    yAxis:{type:'value',name:'笔',...AXIS,splitLine:{lineStyle:{color:'#E5E7EB',type:'dashed'}}},
+    yAxis:{type:'value',name:'笔',...AXIS,splitLine:{lineStyle:{color:'#dce9f3',type:'dashed'}}},
     series:[{type:'bar',barWidth:'48%',
-      data:status.map(r=>({value:r.order_cnt,itemStyle:{color:r.status==='PAID'?'#009E73':(r.status==='CREATED'?'#0072B2':'#E69F00'),borderRadius:[3,3,0,0]}})),
-      label:{show:true,position:'top',formatter:p=>Number(p.value).toLocaleString(),fontFamily:FONT,fontSize:9}}]
+      data:status.map(r=>({value:r.order_cnt,itemStyle:{color:r.status==='PAID'?'#1f7b72':(r.status==='CREATED'?'#315fa8':'#bd7c28'),borderRadius:[3,3,0,0]}})),
+      label:{show:true,position:'top',formatter:p=>Number(p.value).toLocaleString(),fontFamily:FONT,fontSize:9,color:'#132d43'}}]
   });
 
   const hotBody = document.querySelector('#hotTable tbody');
   hotBody.innerHTML = (d.hot||[]).slice(0,10).map(r=>
     `<tr><td>${r.product_id}</td><td>${r.paid_orders}</td><td>${r.total_quantity}</td><td>${Number(r.paid_sales).toLocaleString()}</td></tr>`).join('');
+
+  const statusTotal = status.reduce((a, r) => a + Number(r.order_cnt || 0), 0);
+  const paidCnt = (status.find(r => r.status === 'PAID') || {}).order_cnt || 0;
+  const cancelled = (status.find(r => r.status === 'CANCELLED') || {}).order_cnt || 0;
+  document.getElementById('statusNote').textContent =
+    `支付转化率 ${statusTotal ? (paidCnt / statusTotal * 100).toFixed(2) : '0.00'}% · 取消 ${cancelled} 单`;
 
   const anomalyBody = document.querySelector('#anomalyTable tbody');
   anomalyBody.innerHTML = (d.anomaly||[]).map(r=>`<tr><td>${r.anomaly_type}</td><td>${r.cnt}</td></tr>`).join('');
