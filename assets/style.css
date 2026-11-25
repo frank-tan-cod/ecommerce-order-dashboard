@@ -148,12 +148,12 @@ main {
 /* ---------- Hero ---------- */
 .hero {
   position: relative;
-  min-height: 560px;
+  min-height: 500px;
   display: grid;
   grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr);
   align-items: center;
   gap: 64px;
-  padding: 72px 0 56px;
+  padding: 48px 0 44px;
   border-bottom: 1px solid var(--line-soft);
   overflow: hidden;
 }
