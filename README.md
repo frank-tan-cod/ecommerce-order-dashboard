@@ -2,6 +2,8 @@
 
 基于 Hadoop 生态的电商订单数据分析系统静态展示页，数据来自 Kafka → HDFS/HBase → Hive 的实际查询结果。
 
+**公网地址：<https://frank-tan-cod.github.io/ecommerce-order-dashboard/>**
+
 - 有效订单：5000（清洗去重后）
 - 原始消息：5120（含 100 条异常、20 条重复）
 - HBase 唯一 RowKey：5100
