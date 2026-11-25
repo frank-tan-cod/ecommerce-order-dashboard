@@ -1,0 +1,609 @@
+{
+  "generated_at": "2026-11-25 22:12:30",
+  "period": "2026-11-17 至 2026-11-23",
+  "summary": {
+    "raw_rows": 5120,
+    "distinct_order_ids": 5100,
+    "valid_rows_in_raw": 5020,
+    "invalid_rows": 100,
+    "duplicate_extra_rows": 20,
+    "clean_rows": 5000,
+    "order_cnt": 5000,
+    "gmv": 3162124.2,
+    "paid_gmv": 2287677.1,
+    "paid_orders": 3602,
+    "pay_conversion": 0.7204,
+    "avg_order_value": 632.42,
+    "hbase_rows": 5100
+  },
+  "category": [
+    {
+      "category": "食品",
+      "order_cnt": 1030.0,
+      "gmv": 204002.4,
+      "paid_gmv": 145673.5,
+      "paid_orders": 733.0,
+      "avg_order_value": 198.06,
+      "pay_conversion": 0.7117
+    },
+    {
+      "category": "美妆",
+      "order_cnt": 1020.0,
+      "gmv": 321087.4,
+      "paid_gmv": 236295.4,
+      "paid_orders": 757.0,
+      "avg_order_value": 314.79,
+      "pay_conversion": 0.7422
+    },
+    {
+      "category": "服饰",
+      "order_cnt": 995.0,
+      "gmv": 393067.4,
+      "paid_gmv": 274785.0,
+      "paid_orders": 716.0,
+      "avg_order_value": 395.04,
+      "pay_conversion": 0.7196
+    },
+    {
+      "category": "家居",
+      "order_cnt": 988.0,
+      "gmv": 755998.0,
+      "paid_gmv": 533253.0,
+      "paid_orders": 695.0,
+      "avg_order_value": 765.18,
+      "pay_conversion": 0.7034
+    },
+    {
+      "category": "数码",
+      "order_cnt": 967.0,
+      "gmv": 1487969.0,
+      "paid_gmv": 1097670.2,
+      "paid_orders": 701.0,
+      "avg_order_value": 1538.75,
+      "pay_conversion": 0.7249
+    }
+  ],
+  "daily": [
+    {
+      "dt": "2026-11-17",
+      "order_cnt": 704.0,
+      "gmv": 435997.5,
+      "paid_gmv": 295463.6,
+      "paid_orders": 490.0
+    },
+    {
+      "dt": "2026-11-18",
+      "order_cnt": 723.0,
+      "gmv": 436020.6,
+      "paid_gmv": 340389.6,
+      "paid_orders": 529.0
+    },
+    {
+      "dt": "2026-11-19",
+      "order_cnt": 711.0,
+      "gmv": 390478.1,
+      "paid_gmv": 267366.4,
+      "paid_orders": 516.0
+    },
+    {
+      "dt": "2026-11-20",
+      "order_cnt": 735.0,
+      "gmv": 469065.9,
+      "paid_gmv": 371479.1,
+      "paid_orders": 545.0
+    },
+    {
+      "dt": "2026-11-21",
+      "order_cnt": 647.0,
+      "gmv": 470726.2,
+      "paid_gmv": 340846.5,
+      "paid_orders": 455.0
+    },
+    {
+      "dt": "2026-11-22",
+      "order_cnt": 742.0,
+      "gmv": 478018.9,
+      "paid_gmv": 319924.0,
+      "paid_orders": 525.0
+    },
+    {
+      "dt": "2026-11-23",
+      "order_cnt": 738.0,
+      "gmv": 481817.0,
+      "paid_gmv": 352207.9,
+      "paid_orders": 542.0
+    }
+  ],
+  "hourly": [
+    {
+      "hr": 0.0,
+      "order_cnt": 12.0,
+      "gmv": 10828.0,
+      "paid_gmv": 10361.0
+    },
+    {
+      "hr": 1.0,
+      "order_cnt": 5.0,
+      "gmv": 4084.4,
+      "paid_gmv": 3844.7
+    },
+    {
+      "hr": 2.0,
+      "order_cnt": 4.0,
+      "gmv": 1235.0,
+      "paid_gmv": 1057.0
+    },
+    {
+      "hr": 3.0,
+      "order_cnt": 8.0,
+      "gmv": 4618.4,
+      "paid_gmv": 3554.5
+    },
+    {
+      "hr": 4.0,
+      "order_cnt": 5.0,
+      "gmv": 3160.8,
+      "paid_gmv": 2296.9
+    },
+    {
+      "hr": 5.0,
+      "order_cnt": 10.0,
+      "gmv": 12002.0,
+      "paid_gmv": 11724.0
+    },
+    {
+      "hr": 6.0,
+      "order_cnt": 11.0,
+      "gmv": 4930.0,
+      "paid_gmv": 3657.0
+    },
+    {
+      "hr": 7.0,
+      "order_cnt": 19.0,
+      "gmv": 15363.8,
+      "paid_gmv": 11808.9
+    },
+    {
+      "hr": 8.0,
+      "order_cnt": 30.0,
+      "gmv": 16491.0,
+      "paid_gmv": 14891.9
+    },
+    {
+      "hr": 9.0,
+      "order_cnt": 38.0,
+      "gmv": 26363.1,
+      "paid_gmv": 19071.2
+    },
+    {
+      "hr": 10.0,
+      "order_cnt": 39.0,
+      "gmv": 19931.1,
+      "paid_gmv": 14846.9
+    },
+    {
+      "hr": 11.0,
+      "order_cnt": 55.0,
+      "gmv": 24931.1,
+      "paid_gmv": 21552.1
+    },
+    {
+      "hr": 12.0,
+      "order_cnt": 43.0,
+      "gmv": 36205.8,
+      "paid_gmv": 32711.8
+    },
+    {
+      "hr": 13.0,
+      "order_cnt": 30.0,
+      "gmv": 24360.1,
+      "paid_gmv": 21231.4
+    },
+    {
+      "hr": 14.0,
+      "order_cnt": 42.0,
+      "gmv": 19249.5,
+      "paid_gmv": 15140.5
+    },
+    {
+      "hr": 15.0,
+      "order_cnt": 22.0,
+      "gmv": 15055.5,
+      "paid_gmv": 11096.0
+    },
+    {
+      "hr": 16.0,
+      "order_cnt": 46.0,
+      "gmv": 36334.3,
+      "paid_gmv": 29403.6
+    },
+    {
+      "hr": 17.0,
+      "order_cnt": 59.0,
+      "gmv": 40152.9,
+      "paid_gmv": 19612.1
+    },
+    {
+      "hr": 18.0,
+      "order_cnt": 62.0,
+      "gmv": 33702.7,
+      "paid_gmv": 29095.1
+    },
+    {
+      "hr": 19.0,
+      "order_cnt": 65.0,
+      "gmv": 44122.1,
+      "paid_gmv": 33182.3
+    },
+    {
+      "hr": 20.0,
+      "order_cnt": 57.0,
+      "gmv": 42216.6,
+      "paid_gmv": 30695.2
+    },
+    {
+      "hr": 21.0,
+      "order_cnt": 32.0,
+      "gmv": 16190.1,
+      "paid_gmv": 14249.1
+    },
+    {
+      "hr": 22.0,
+      "order_cnt": 32.0,
+      "gmv": 15507.4,
+      "paid_gmv": 14365.7
+    },
+    {
+      "hr": 23.0,
+      "order_cnt": 9.0,
+      "gmv": 2030.2,
+      "paid_gmv": 2030.2
+    }
+  ],
+  "users": [
+    {
+      "user_id": "U046",
+      "paid_orders": 42.0,
+      "paid_amount": 48596.9
+    },
+    {
+      "user_id": "U061",
+      "paid_orders": 51.0,
+      "paid_amount": 48468.8
+    },
+    {
+      "user_id": "U011",
+      "paid_orders": 42.0,
+      "paid_amount": 45996.5
+    },
+    {
+      "user_id": "U018",
+      "paid_orders": 37.0,
+      "paid_amount": 37857.8
+    },
+    {
+      "user_id": "U053",
+      "paid_orders": 42.0,
+      "paid_amount": 37500.4
+    },
+    {
+      "user_id": "U075",
+      "paid_orders": 40.0,
+      "paid_amount": 36829.4
+    },
+    {
+      "user_id": "U074",
+      "paid_orders": 52.0,
+      "paid_amount": 34698.5
+    },
+    {
+      "user_id": "U083",
+      "paid_orders": 30.0,
+      "paid_amount": 34592.8
+    },
+    {
+      "user_id": "U023",
+      "paid_orders": 39.0,
+      "paid_amount": 33302.6
+    },
+    {
+      "user_id": "U001",
+      "paid_orders": 41.0,
+      "paid_amount": 33299.2
+    }
+  ],
+  "top3": [
+    {
+      "dt": "2026-11-17",
+      "rn": 1.0,
+      "category": "数码",
+      "gmv": 201976.29999999996
+    },
+    {
+      "dt": "2026-11-17",
+      "rn": 2.0,
+      "category": "家居",
+      "gmv": 115110.0
+    },
+    {
+      "dt": "2026-11-17",
+      "rn": 3.0,
+      "category": "服饰",
+      "gmv": 48683.70000000001
+    },
+    {
+      "dt": "2026-11-18",
+      "rn": 1.0,
+      "category": "数码",
+      "gmv": 203629.19999999995
+    },
+    {
+      "dt": "2026-11-18",
+      "rn": 2.0,
+      "category": "家居",
+      "gmv": 102635.0
+    },
+    {
+      "dt": "2026-11-18",
+      "rn": 3.0,
+      "category": "服饰",
+      "gmv": 61714.70000000001
+    },
+    {
+      "dt": "2026-11-19",
+      "rn": 1.0,
+      "category": "数码",
+      "gmv": 174213.89999999997
+    },
+    {
+      "dt": "2026-11-19",
+      "rn": 2.0,
+      "category": "家居",
+      "gmv": 70241.0
+    },
+    {
+      "dt": "2026-11-19",
+      "rn": 3.0,
+      "category": "服饰",
+      "gmv": 60372.000000000015
+    },
+    {
+      "dt": "2026-11-20",
+      "rn": 1.0,
+      "category": "数码",
+      "gmv": 215247.99999999997
+    },
+    {
+      "dt": "2026-11-20",
+      "rn": 2.0,
+      "category": "家居",
+      "gmv": 119647.0
+    },
+    {
+      "dt": "2026-11-20",
+      "rn": 3.0,
+      "category": "服饰",
+      "gmv": 56034.90000000001
+    },
+    {
+      "dt": "2026-11-21",
+      "rn": 1.0,
+      "category": "数码",
+      "gmv": 239573.99999999997
+    },
+    {
+      "dt": "2026-11-21",
+      "rn": 2.0,
+      "category": "家居",
+      "gmv": 115958.0
+    },
+    {
+      "dt": "2026-11-21",
+      "rn": 3.0,
+      "category": "美妆",
+      "gmv": 50417.6
+    },
+    {
+      "dt": "2026-11-22",
+      "rn": 1.0,
+      "category": "数码",
+      "gmv": 235873.89999999994
+    },
+    {
+      "dt": "2026-11-22",
+      "rn": 2.0,
+      "category": "家居",
+      "gmv": 99587.0
+    },
+    {
+      "dt": "2026-11-22",
+      "rn": 3.0,
+      "category": "服饰",
+      "gmv": 61640.600000000006
+    },
+    {
+      "dt": "2026-11-23",
+      "rn": 1.0,
+      "category": "数码",
+      "gmv": 217453.69999999995
+    },
+    {
+      "dt": "2026-11-23",
+      "rn": 2.0,
+      "category": "家居",
+      "gmv": 132820.0
+    },
+    {
+      "dt": "2026-11-23",
+      "rn": 3.0,
+      "category": "服饰",
+      "gmv": 67718.4
+    }
+  ],
+  "status": [
+    {
+      "status": "PAID",
+      "order_cnt": 3602.0
+    },
+    {
+      "status": "CREATED",
+      "order_cnt": 805.0
+    },
+    {
+      "status": "CANCELLED",
+      "order_cnt": 593.0
+    }
+  ],
+  "anomaly": [
+    {
+      "anomaly_type": "missing_category",
+      "cnt": 15.0
+    },
+    {
+      "anomaly_type": "missing_user_id",
+      "cnt": 15.0
+    },
+    {
+      "anomaly_type": "invalid_status",
+      "cnt": 14.0
+    },
+    {
+      "anomaly_type": "invalid_time",
+      "cnt": 14.0
+    },
+    {
+      "anomaly_type": "missing_product_id",
+      "cnt": 14.0
+    },
+    {
+      "anomaly_type": "non_positive_price",
+      "cnt": 14.0
+    },
+    {
+      "anomaly_type": "non_positive_quantity",
+      "cnt": 14.0
+    }
+  ],
+  "hot": [
+    {
+      "product_id": "P001",
+      "paid_orders": 76.0,
+      "total_quantity": 122.0,
+      "paid_sales": 365878.0
+    },
+    {
+      "product_id": "P007",
+      "paid_orders": 74.0,
+      "total_quantity": 122.0,
+      "paid_sales": 292678.0
+    },
+    {
+      "product_id": "P040",
+      "paid_orders": 60.0,
+      "total_quantity": 118.0,
+      "paid_sales": 188682.0
+    },
+    {
+      "product_id": "P039",
+      "paid_orders": 74.0,
+      "total_quantity": 116.0,
+      "paid_sales": 150684.0
+    },
+    {
+      "product_id": "P004",
+      "paid_orders": 64.0,
+      "total_quantity": 105.0,
+      "paid_sales": 136395.0
+    },
+    {
+      "product_id": "P006",
+      "paid_orders": 57.0,
+      "total_quantity": 102.0,
+      "paid_sales": 91698.0
+    },
+    {
+      "product_id": "P014",
+      "paid_orders": 66.0,
+      "total_quantity": 105.0,
+      "paid_sales": 73395.0
+    },
+    {
+      "product_id": "P003",
+      "paid_orders": 86.0,
+      "total_quantity": 150.0,
+      "paid_sales": 68850.0
+    },
+    {
+      "product_id": "P045",
+      "paid_orders": 75.0,
+      "total_quantity": 133.0,
+      "paid_sales": 61047.0
+    },
+    {
+      "product_id": "P032",
+      "paid_orders": 73.0,
+      "total_quantity": 124.0,
+      "paid_sales": 49476.0
+    },
+    {
+      "product_id": "P002",
+      "paid_orders": 70.0,
+      "total_quantity": 121.0,
+      "paid_sales": 48279.0
+    },
+    {
+      "product_id": "P009",
+      "paid_orders": 72.0,
+      "total_quantity": 132.0,
+      "paid_sales": 43428.0
+    },
+    {
+      "product_id": "P037",
+      "paid_orders": 73.0,
+      "total_quantity": 129.0,
+      "paid_sales": 42441.0
+    },
+    {
+      "product_id": "P048",
+      "paid_orders": 67.0,
+      "total_quantity": 122.0,
+      "paid_sales": 40138.0
+    },
+    {
+      "product_id": "P019",
+      "paid_orders": 68.0,
+      "total_quantity": 120.0,
+      "paid_sales": 39480.0
+    },
+    {
+      "product_id": "P035",
+      "paid_orders": 79.0,
+      "total_quantity": 146.0,
+      "paid_sales": 39274.0
+    },
+    {
+      "product_id": "P013",
+      "paid_orders": 63.0,
+      "total_quantity": 108.0,
+      "paid_sales": 38772.0
+    },
+    {
+      "product_id": "P016",
+      "paid_orders": 87.0,
+      "total_quantity": 143.0,
+      "paid_sales": 37037.0
+    },
+    {
+      "product_id": "P029",
+      "paid_orders": 71.0,
+      "total_quantity": 137.0,
+      "paid_sales": 36716.0
+    },
+    {
+      "product_id": "P041",
+      "paid_orders": 77.0,
+      "total_quantity": 145.0,
+      "paid_sales": 33205.0
+    }
+  ]
+}
