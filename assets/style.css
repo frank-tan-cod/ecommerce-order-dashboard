@@ -279,33 +279,25 @@ main {
   margin: 34px 0 8px;
 }
 .kpi {
-  position: relative;
-  background: var(--surface);
-  border: 1px solid var(--line);
+  background: #fff7ea;
+  border: 1px solid #f0dfc9;
   border-radius: 10px;
   padding: 16px 16px 14px;
   display: flex;
   flex-direction: column;
   gap: 3px;
-  box-shadow: 0 1px 2px rgba(27, 64, 96, .03);
-  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  box-shadow: 0 1px 2px rgba(120, 86, 44, .04);
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease, background-color .18s ease;
 }
-.kpi::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 16px;
-  width: 26px;
-  height: 3px;
-  border-radius: 0 0 3px 3px;
-  background: var(--teal);
+.kpi:hover {
+  transform: translateY(-2px);
+  background: #fff2dd;
+  border-color: #e6cfae;
+  box-shadow: 0 8px 22px rgba(120, 86, 44, .10);
 }
-.kpi:nth-child(2n)::before { background: var(--cobalt); }
-.kpi:nth-child(3n)::before { background: var(--amber); }
-.kpi:hover { transform: translateY(-2px); border-color: rgba(49, 93, 133, .28); box-shadow: var(--card-shadow); }
-.kpi span { color: var(--muted); font-size: 12px; }
+.kpi span { color: #8a7360; font-size: 12px; }
 .kpi strong { color: var(--navy); font-size: 22px; letter-spacing: .2px; }
-.kpi em { color: var(--faint); font-size: 11px; font-style: normal; }
+.kpi em { color: #a08b74; font-size: 11px; font-style: normal; }
 
 /* ---------- 区块 ---------- */
 .section { margin: 72px 0 0; scroll-margin-top: calc(var(--shell-nav) + 18px); }
