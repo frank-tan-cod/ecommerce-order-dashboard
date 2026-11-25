@@ -11,7 +11,7 @@ if [ ! -d .git ]; then
   git init -b main
 fi
 git add .
-git -c user.name="frank-tan-cod" -c user.email="485044648@qq.com" \
+git -c user.name="frank-tan-cod" -c user.email="frank-tan-cod@users.noreply.github.com" \
   commit -m "Update ecommerce dashboard" || true
 
 if ! gh repo view "$REPO" >/dev/null 2>&1; then
